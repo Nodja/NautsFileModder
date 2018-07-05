@@ -1,0 +1,6 @@
+__pycache__/
+_dumps/
+_env/
+lib/
+animo/crypto/Release/
+animo/crypto/_aesenc.cp36-win32.pyd
