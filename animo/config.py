@@ -11,7 +11,7 @@ def load_config():
     if not os.path.isfile(cfg_path):
         raise ConfigError("No config file found.")
     
-    _config = configparser.ConfigParser()
+    _config = configparser.ConfigParser(delimiters='=')
     _config.optionxform=str
     _config.read(cfg_path)
     
