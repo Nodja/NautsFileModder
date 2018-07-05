@@ -4,3 +4,4 @@ _env/
 lib/
 animo/crypto/Release/
 animo/crypto/_aesenc.cp36-win32.pyd
+animo/crypto/_aesenc.cp37-win32.pyd
