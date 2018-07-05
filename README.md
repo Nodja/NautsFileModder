@@ -1,5 +1,5 @@
 # NautsFileModder
-Awesomenauts File Modification with built-in game patching
+Awesomenauts File Modder with built-in game patching
 
 # Usage
  1) [Download](https://github.com/Nodja/NautsFileModder/releases) from releases  
@@ -8,6 +8,7 @@ Awesomenauts File Modification with built-in game patching
  4) run nfm.bat to launch the modder  
  5) run dumper.bat to dump game contents into ```_dumps```  
  
+ Note: nfm.cfg is preloaded with a setting modification that will zoom out after you land your droppod.
  
 # What does it do?
 
