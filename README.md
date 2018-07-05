@@ -1,5 +1,5 @@
 # NautsFileModder
-Awesomenauts File Modification with built-in game patching
+Awesomenauts File Modder with built-in game patching
 
 # Usage
  1) [Download](https://github.com/Nodja/NautsFileModder/releases) from releases  
