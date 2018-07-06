@@ -4,7 +4,7 @@ import subprocess
 import time
 
 from animo.config import get_config, load_config
-from animo.env import create_env
+from animo.env import create_env, kill_process
 from animo.mods import mod_settings, mod_simple_files
 from animo.patcher import patch_game
 
@@ -12,8 +12,8 @@ from animo.patcher import patch_game
 if __name__ == "__main__":
 
     load_config()
-    get_config()
     
+    kill_process()
     create_env()
     
     mod_settings()

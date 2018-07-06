@@ -30,8 +30,6 @@ def kill_process():
             
             
 def create_env():
-    kill_process()
-    
     if os.path.isdir("_env"):
         shutil.rmtree("_env")
     
