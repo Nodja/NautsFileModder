@@ -1,0 +1,4 @@
+; changes the first splashscreen to show we're launching a modded version
+[file=Data\Textures\SplashScreen_2.tga]
+replace_with = mods\samplemods\Textures\SplashScreen_2.tga
+encrypt = no

@@ -1,0 +1,3 @@
+; will zoomout the camera far out, useful for taking screenshots of whole maps
+[settings=Data\SettingsNewMatchmaking\All.settings]
+camera_height_singlePlayer = 9
