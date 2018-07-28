@@ -1,3 +1,5 @@
+import re
+
 import pymem
 from pymem import Pymem as _Pymem
 
@@ -21,7 +23,17 @@ class Pymem(_Pymem):
 def patch_game():
     config = get_config()
     
-    sig = bytes.fromhex(config['patcher']['sig'])
+    def hex_pattern(pattern_string):
+        _string = pattern_string.replace(' ', '')
+        _pattern = b''
+        for byte in re.findall('..', _string):
+            if byte == '??':
+                _pattern += b'.'
+                continue
+            _pattern += bytes.fromhex(byte)
+        return _pattern
+        
+    sig = hex_pattern(config['patcher']['sig'])
     offset = int(config['patcher']['offset'])
     expected = bytes.fromhex(config['patcher']['expected'])
     replace_with = bytes.fromhex(config['patcher']['replace_with'])
@@ -38,8 +50,10 @@ def patch_game():
                 buffer = pm.read_bytes(_address, size)
             except:
                 break
-            local_offset = buffer.find(sig)
-            if local_offset >= 0:
+            sig_pattern = re.compile(sig)
+            pattern_match = re.search(sig_pattern, buffer)
+            if pattern_match is not None:
+                local_offset = pattern_match.start()
                 if expected == pm.read_bytes(_address + local_offset, len(expected)):
                     print(f"Target code found at {_address + local_offset}, patching...")
                     pm.write_bytes(_address + local_offset, replace_with)
